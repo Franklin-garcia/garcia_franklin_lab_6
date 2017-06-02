@@ -6,10 +6,12 @@
 package lab6_garcia_franklin;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -59,6 +61,12 @@ public class Principal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         cb_nombre = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        cb_nombre1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
         jd_clientes = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -131,7 +139,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(307, 307, 307)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +164,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(tf_descuento, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear", jPanel1);
@@ -175,6 +183,11 @@ public class Principal extends javax.swing.JFrame {
         cb_categoria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "vegetales", "carnes", "bebidas", "snacks" }));
 
         jButton5.setText("Modificar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -208,7 +221,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(336, 336, 336)
                         .addComponent(jButton5)))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(303, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cb_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,22 +250,77 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addComponent(tf_descuento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(45, 45, 45))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel15.setText("Eliminar y listar");
+
+        jLabel16.setText("Nombre");
+
+        cb_nombre1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_nombre1ItemStateChanged(evt);
+            }
+        });
+
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Categoria", "Precio", "Descuento"
+            }
+        ));
+        jScrollPane1.setViewportView(tabla1);
+
+        jButton6.setText("Eliminar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 749, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(jLabel15))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel16)
+                        .addGap(26, 26, 26)
+                        .addComponent(cb_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(jButton6)))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 462, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(cb_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton6)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar y Listar", jPanel3);
@@ -463,8 +531,54 @@ public class Principal extends javax.swing.JFrame {
                 modelo.addElement(t);
             }
             cb_nombre.setModel(modelo);
+            cb_nombre1.setModel(modelo);
         }
     }//GEN-LAST:event_jd_administradorWindowActivated
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        try {
+            administrarProductos ap = new administrarProductos("./productos.txt");
+            ap.cargarArchivo();
+            ap.getListaPersonas().get(cb_nombre.getSelectedIndex()).setCategoria(cb_categoria1.getSelectedItem().toString());
+            ap.getListaPersonas().get(cb_nombre.getSelectedIndex()).setDescuento(Double.parseDouble(tf_descuento1.getText()));
+            ap.getListaPersonas().get(cb_nombre.getSelectedIndex()).setNombre(tf_nombre1.getText());
+            ap.getListaPersonas().get(cb_nombre.getSelectedIndex()).setPrecio(Integer.parseInt(tf_precio1.getText()));
+            ap.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se modifico con exito");
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void cb_nombre1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_nombre1ItemStateChanged
+        if (evt.getStateChange() == 2) {
+            tabla1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre", "Categoria", "Precio", "Descuento"
+                    }
+            ));
+            jScrollPane1.setViewportView(tabla1);
+            Productos p = (Productos) cb_nombre1.getSelectedItem();
+            Object[] newrow = {p.getNombre(), p.getCategoria(), p.getPrecio(), p.getDescuento()};
+            DefaultTableModel Modelo = (DefaultTableModel) tabla1.getModel();
+            Modelo.addRow(newrow);
+            tabla1.setModel(Modelo);
+        }
+    }//GEN-LAST:event_cb_nombre1ItemStateChanged
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        try {
+            administrarProductos ap = new administrarProductos("./productos.txt");
+            ap.cargarArchivo();
+            ap.getListaPersonas().remove(tabla1.getSelectedRow());
+            ap.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se elimino con exito");
+            jd_administrador.setVisible(false); 
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -505,17 +619,21 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_categoria;
     private javax.swing.JComboBox<String> cb_categoria1;
     private javax.swing.JComboBox<String> cb_nombre;
+    private javax.swing.JComboBox<String> cb_nombre1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -530,11 +648,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog jd_administrador;
     private javax.swing.JDialog jd_clientes;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTextField tf_descuento;
     private javax.swing.JTextField tf_descuento1;
     private javax.swing.JTextField tf_nombre;
@@ -543,4 +663,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_precio1;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Clientes>listaClientes=new ArrayList();
 }

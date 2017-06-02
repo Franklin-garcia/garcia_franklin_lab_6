@@ -1,1 +1,1 @@
-cebolla;vegetales;45;5.0;doritos;snacks;45;5.0;tamales;snacks;45;5.0;
+tamales;snacks;45;5.0;
