@@ -445,7 +445,7 @@ public class Principal extends javax.swing.JFrame {
         try {
             administrarProductos ap = new administrarProductos("./productos.txt");
             ap.cargarArchivo();
-            ap.getListaPersonas().add(new Productos(tf_nombre.getText(), cb_categoria.getSelectedItem().toString(), Integer.parseInt(tf_precio.getText()), Double.parseDouble(tf_descuento.getText())));
+            ap.getListaPersonas().add(new Productos(tf_nombre_producto.getText(), cb_categoria.getSelectedItem().toString(), Integer.parseInt(tf_precio.getText()), Double.parseDouble(tf_descuento.getText())));
             ap.escribirArchivo();
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
