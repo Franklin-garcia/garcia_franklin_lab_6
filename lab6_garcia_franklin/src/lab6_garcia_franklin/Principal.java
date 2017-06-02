@@ -849,7 +849,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-        //factura.setText(""); 
+        factura.setText(""); 
         factura.append(""+listaClientes.get(cb_pro.getSelectedIndex()).getNombre() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getEdad() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getListaProductos());
