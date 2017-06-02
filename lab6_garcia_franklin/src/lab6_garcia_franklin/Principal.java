@@ -761,6 +761,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         ////////////777
+        double temp1=0,temp2=0;
         try {
             administrarProductos ap = new administrarProductos("./productos.txt");
             ap.cargarArchivo();
@@ -769,6 +770,9 @@ public class Principal extends javax.swing.JFrame {
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getCategoria(),
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio(),
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getDescuento()));
+            temp1=ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio()*ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getDescuento();
+            temp2=ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio()-temp1;
+            Ganancia+=temp2;
             ap.getListaPersonas().remove(cb_pro.getSelectedIndex());
             ap.escribirArchivo();
             JOptionPane.showMessageDialog(null, "Gracias por comprar verifique su compra");
@@ -880,4 +884,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_precio1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Clientes> listaClientes = new ArrayList();
+    public double Ganancia = 0;
 }
