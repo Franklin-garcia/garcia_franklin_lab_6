@@ -845,14 +845,15 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         factura.setText(""); 
-        cb_cliente1.getModel();
+        
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-        factura.setText(""); 
-        factura.setText(""+listaClientes.get(cb_pro.getSelectedIndex()).getNombre() + "\n"
+        //factura.setText(""); 
+        factura.append(""+listaClientes.get(cb_pro.getSelectedIndex()).getNombre() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getEdad() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getListaProductos());
+      
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked

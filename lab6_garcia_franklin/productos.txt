@@ -1,0 +1,1 @@
+chile;vegetales;23;0.34;pepsi;bebidas;213;0.9;
