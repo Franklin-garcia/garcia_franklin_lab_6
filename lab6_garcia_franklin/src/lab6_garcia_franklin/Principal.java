@@ -7,6 +7,8 @@ package lab6_garcia_franklin;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -66,6 +68,14 @@ public class Principal extends javax.swing.JFrame {
         cb_nombre1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla1 = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_ganancia = new javax.swing.JTextArea();
+        jButton10 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        cb_eliminar = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jd_clientes = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -90,7 +100,6 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         factura = new javax.swing.JTextArea();
         jButton9 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -291,13 +300,6 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla1);
 
-        jButton6.setText("Eliminar");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -313,12 +315,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(cb_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(338, 338, 338)
-                        .addComponent(jButton6)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addGap(52, 52, 52)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,14 +328,97 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(cb_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jButton6)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Eliminar y Listar", jPanel3);
+        jTabbedPane1.addTab("Inventario", jPanel3);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel21.setText("Ganancias");
+
+        ta_ganancia.setColumns(20);
+        ta_ganancia.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        ta_ganancia.setRows(5);
+        jScrollPane2.setViewportView(ta_ganancia);
+
+        jButton10.setText("Ver ganancia");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton10)
+                            .addComponent(jLabel21))))
+                .addContainerGap(277, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123))
+        );
+
+        jTabbedPane1.addTab("Ganancias", jPanel8);
+
+        jLabel22.setText("Eliminar");
+
+        jButton6.setText("Eliminar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(264, 264, 264)
+                        .addComponent(cb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(305, 305, 305)
+                        .addComponent(jButton6)))
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel22)
+                .addGap(63, 63, 63)
+                .addComponent(cb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(jButton6)
+                .addContainerGap(209, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar", jPanel7);
 
         javax.swing.GroupLayout jd_administradorLayout = new javax.swing.GroupLayout(jd_administrador.getContentPane());
         jd_administrador.getContentPane().setLayout(jd_administradorLayout);
@@ -546,19 +628,6 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Comprar", jPanel6);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 732, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 505, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Factura", jPanel7);
-
         javax.swing.GroupLayout jd_clientesLayout = new javax.swing.GroupLayout(jd_clientes.getContentPane());
         jd_clientes.getContentPane().setLayout(jd_clientesLayout);
         jd_clientesLayout.setHorizontalGroup(
@@ -658,10 +727,15 @@ public class Principal extends javax.swing.JFrame {
             ap.cargarArchivo();
             ap.getListaPersonas().add(new Productos(tf_nombre_producto.getText(), cb_categoria.getSelectedItem().toString(), Integer.parseInt(tf_precio.getText()), Double.parseDouble(tf_descuento.getText())));
             ap.escribirArchivo();
+            
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         JOptionPane.showMessageDialog(this, "Se agrego con exito");
+        tf_nombre.setText("");
+        tf_precio.setText("");
+        tf_descuento.setText("");
+        
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jd_administradorWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_administradorWindowActivated
@@ -675,6 +749,7 @@ public class Principal extends javax.swing.JFrame {
             }
             cb_nombre.setModel(modelo);
             cb_nombre1.setModel(modelo);
+            cb_eliminar.setModel(modelo);
         }
     }//GEN-LAST:event_jd_administradorWindowActivated
 
@@ -691,6 +766,9 @@ public class Principal extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+        tf_nombre1.setText("");
+        tf_precio1.setText("");
+        tf_descuento.setText("");
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void cb_nombre1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_nombre1ItemStateChanged
@@ -709,19 +787,6 @@ public class Principal extends javax.swing.JFrame {
             tabla1.setModel(Modelo);
         }
     }//GEN-LAST:event_cb_nombre1ItemStateChanged
-
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        try {
-            administrarProductos ap = new administrarProductos("./productos.txt");
-            ap.cargarArchivo();
-            ap.getListaPersonas().remove(tabla1.getSelectedRow());
-            ap.escribirArchivo();
-            JOptionPane.showMessageDialog(this, "Se elimino con exito");
-            jd_administrador.setVisible(false);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton6MouseClicked
 
     private void jd_clientesWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_clientesWindowActivated
         if (jd_clientes.isActive()) {
@@ -761,7 +826,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         ////////////777
-        double temp1=0,temp2=0;
+        double temp1 = 0, temp2 = 0;
         try {
             administrarProductos ap = new administrarProductos("./productos.txt");
             ap.cargarArchivo();
@@ -770,9 +835,9 @@ public class Principal extends javax.swing.JFrame {
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getCategoria(),
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio(),
                     ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getDescuento()));
-            temp1=ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio()*ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getDescuento();
-            temp2=ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio()-temp1;
-            Ganancia+=temp2;
+            temp1 = ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio() * ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getDescuento();
+            temp2 = ap.getListaPersonas().get(cb_pro.getSelectedIndex()).getPrecio() - temp1;
+            Ganancia += temp2;
             ap.getListaPersonas().remove(cb_pro.getSelectedIndex());
             ap.escribirArchivo();
             JOptionPane.showMessageDialog(null, "Gracias por comprar verifique su compra");
@@ -782,10 +847,28 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        factura.setText(""); 
         factura.setText(listaClientes.get(cb_pro.getSelectedIndex()).getNombre() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getEdad() + "\n"
                 + "" + listaClientes.get(cb_pro.getSelectedIndex()).getListaProductos());
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        ta_ganancia.setText("");
+        ta_ganancia.setText("" + Ganancia);
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        try {
+            administrarProductos ap = new administrarProductos("./productos.txt");
+            ap.cargarArchivo();
+            ap.getListaPersonas().remove(cb_eliminar.getSelectedIndex()); 
+            ap.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Se elimino con exito"); 
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -827,11 +910,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_categoria1;
     private javax.swing.JComboBox<Object> cb_cliente;
     private javax.swing.JComboBox<Object> cb_cliente1;
+    private javax.swing.JComboBox<String> cb_eliminar;
     private javax.swing.JComboBox<String> cb_nombre;
     private javax.swing.JComboBox<String> cb_nombre1;
     private javax.swing.JComboBox<String> cb_pro;
     private javax.swing.JTextArea factura;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -853,6 +938,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -867,12 +954,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JDialog jd_administrador;
     private javax.swing.JDialog jd_clientes;
+    private javax.swing.JTextArea ta_ganancia;
     private javax.swing.JTable tabla1;
     private javax.swing.JTextField tf_descuento;
     private javax.swing.JTextField tf_descuento1;

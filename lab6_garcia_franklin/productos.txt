@@ -1,1 +1,0 @@
-cebolla;vegetales;213;12.0;doritos;snacks;213;12.0;pepsi;vegetales;12;0.4;
