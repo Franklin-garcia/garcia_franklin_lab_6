@@ -77,7 +77,6 @@ public class administrarProductos {
         try {
             sc = new Scanner(archivo);
             sc.useDelimiter(";");
-       
             while (sc.hasNext()) {
                 listaProductos.add(new Productos(sc.next(),sc.next(),sc.nextInt(),sc.nextDouble()));
             } 
